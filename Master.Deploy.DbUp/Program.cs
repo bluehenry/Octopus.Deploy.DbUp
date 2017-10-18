@@ -41,6 +41,7 @@ namespace Master.Deploy.DbUp
             var builder = DeployChanges.To.SqlDatabase(connectionString)
                 .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
                 .WithTransactionPerScript()
+                .WithVariablesDisabled()
                 .LogToConsole()
                 .JournalTo(new NullJournal());
 
